@@ -1,0 +1,34 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "blog",
+  "main": "index.js",
+  "repository": "https://github.com/onReadyL/blog.git",
+  "author": "L XB <1169959173@qq.com>",
+  "scripts": {
+    "lint": "eslint --ext .js --ext .jsx src"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.1.2",
+    "webpack": "^4.44.2"
+  },
+  "dependencies": {
+    "antd": "^4.6.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1"
+  },
+  "pre-commit": [
+    
+  ]
+}

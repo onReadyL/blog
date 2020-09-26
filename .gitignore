@@ -1,0 +1,14 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.docz
+.cache
+public
+node_modules
+yarn-error.log
+styleguide
+dist
+yarn.lock
