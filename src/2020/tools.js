@@ -27,3 +27,16 @@ export function throttle(func, ms = 1000) {
 		}, ms);
 	};
 }
+
+/** new */
+export function myNew(func, ...args) {
+	const instance = {};
+	if (func.prototype) {
+		Object.setPrototypeOf(instance, func.prototype);
+	}
+	const res = func.apply(instance, args);
+	if (typeof res === 'function' || (typeof res === 'object' && res !== null)) {
+		return res;
+	}
+	return instance;
+}
