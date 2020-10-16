@@ -101,5 +101,7 @@ module.exports = {
 		'no-class-assign': 2,
 		'no-cond-assign': 2,
 		'no-mixed-spaces-and-tabs': 1,
+		'no-extend-native': 0, // 全局对象允许扩展ps:Function.proptype
+		'prefer-rest-params': 0, // 启用arguments 变量
 	},
 };

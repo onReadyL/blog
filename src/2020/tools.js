@@ -40,3 +40,50 @@ export function myNew(func, ...args) {
 	}
 	return instance;
 }
+
+/** bind */
+Function.prototype.myBind = function (context) {
+	const fn = this;
+	const args = Array.from(arguments).slice(1);
+	const newFunc = function () {
+		const newArgs = args.concat(...arguments);
+		if (this instanceof newFunc) {
+			fn.apply(this, newArgs);
+		} else {
+			fn.apply(context, newArgs);
+		}
+	};
+	newFunc.prototype = Object.create(fn.prototype);
+	return newFunc;
+};
+
+/** call */
+Function.prototype.myCall = function (context) {
+	const key = Symbol('key');
+	context[key] = this;
+	const args = [...arguments].slice(1);
+	const res = context[key](...args);
+	delete context[key];
+	return res;
+};
+
+/** apply */
+Function.prototype.myApply = function (context) {
+	const key = Symbol('key');
+	context[key] = this;
+	let res;
+	if (arguments[1]) {
+		res = context[key](...arguments);
+	} else {
+		res = context[key];
+	}
+	delete context[key];
+	return res;
+};
+
+// /** deepCopy */
+// function deepCopy(obj, cache = new WeakMap()) {
+// 	if (!obj instanceof Object) {
+// 		return obj;
+// 	}
+// }
