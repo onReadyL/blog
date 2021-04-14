@@ -6,7 +6,8 @@
   "repository": "https://github.com/onReadyL/blog.git",
   "author": "L XB <1169959173@qq.com>",
   "scripts": {
-    "lint": "eslint --ext .js --ext .jsx src"
+    "lint": "eslint --ext .js --ext .jsx src",
+    "fix": "prettier --write ./src"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -28,7 +29,5 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1"
   },
-  "pre-commit": [
-    
-  ]
+  "pre-commit": []
 }
