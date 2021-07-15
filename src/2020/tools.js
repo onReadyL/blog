@@ -7,6 +7,7 @@ export function debounce(func, ms = 1000) {
 		if (timer) {
 			clearTimeout(timer);
 		}
+
 		timer = setTimeout(() => {
 			func.apply(this, args);
 		}, ms);
@@ -20,6 +21,7 @@ export function throttle(func, ms = 1000) {
 		if (!canRun) {
 			return;
 		}
+
 		canRun = false;
 		setTimeout(() => {
 			func.apply(this, args);
@@ -34,10 +36,12 @@ export function myNew(func, ...args) {
 	if (func.prototype) {
 		Object.setPrototypeOf(instance, func.prototype);
 	}
+
 	const res = func.apply(instance, args);
 	if (typeof res === 'function' || (typeof res === 'object' && res !== null)) {
 		return res;
 	}
+
 	return instance;
 }
 
@@ -77,6 +81,7 @@ Function.prototype.myApply = function (context) {
 	} else {
 		res = context[key];
 	}
+
 	delete context[key];
 	return res;
 };

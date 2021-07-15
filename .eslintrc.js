@@ -1,4 +1,5 @@
 module.exports = {
+	root: true,
 	extends: [
 		'airbnb-base',
 		// "prettier", // prettier代码风格格式化代码
@@ -83,7 +84,7 @@ module.exports = {
 		// 指定数组的元素之间要以空格隔开(, 后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格
 		'array-bracket-spacing': [2, 'never'],
 		'no-use-before-define': 1, // 不允许在变量定义之前使用它们
-		curly: [2, 'all'], // 强制所有控制语句使用一致的括号风格
+		curly: [2, 'all'], // 强制所有控制语句使用一致的括号风格 multi
 		'constructor-super': 2,
 		'no-label-var': 2, // 不允许标签与变量同名
 		'no-catch-shadow': 0, // 禁止 catch 子句的参数与外层作用域中的变量同名
@@ -103,5 +104,9 @@ module.exports = {
 		'no-mixed-spaces-and-tabs': 1,
 		'no-extend-native': 0, // 全局对象允许扩展ps:Function.proptype
 		'prefer-rest-params': 0, // 启用arguments 变量
+		'consistent-return': 0, // 箭头函数必须有返回值
+		'prefer-const': 2, // 没使用的变量用const
+		'no-plusplus': 0,
+		'no-param-reassign': 0,
 	},
 };
