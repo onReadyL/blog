@@ -1,8 +1,7 @@
 module.exports = {
 	root: true,
 	extends: [
-		'airbnb-base',
-		// "prettier", // prettier代码风格格式化代码
+		'prettier', // prettier代码风格格式化代码
 		'eslint:recommended', // 启用推荐的规则
 		// 'plugin:prettier/recommended',
 		'plugin:react/recommended',
