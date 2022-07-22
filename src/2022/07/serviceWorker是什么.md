@@ -88,7 +88,22 @@ this.addEventListener('message', (data) => {
     }
 })
 ```
-
+（四）使用
+```
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(resp) {
+      return resp || fetch(event.request).then(function(response) {
+        return caches.open('v1').then(function(cache) {
+            //加入新的缓存
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
+    })
+  );
+});
+```
 ### 注意
 - Service worker运行在worker上下文 --> 不能访问DOM
 
