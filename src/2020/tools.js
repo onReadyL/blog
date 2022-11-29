@@ -1,5 +1,15 @@
 // 手写常用工具函数
 
+const someType = {
+	type: Object.prototype.toString.call,
+	isObject: function () {
+		return this.type(arguments) === '[object Object]';
+	},
+	isArray: function () {
+		return this.type(arguments) === '[object Array]';
+	},
+};
+
 // 防抖函数
 export function debounce(func, ms = 1000) {
 	let timer;
@@ -92,3 +102,24 @@ Function.prototype.myApply = function (context) {
 // 		return obj;
 // 	}
 // }
+
+/** 冒泡排序 */
+const sort = (arr = []) => {
+	if (!someType.isArray(arr)) return arr;
+	const len = arr.length;
+	for (let i = 0; i < len - 1; i++) {
+		let done = true;
+		for (let j = 0; j < len - 1 - i; j++) {
+			if (arr[j] > arr[j + 1]) {
+				let temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				done = false;
+			}
+		}
+		if (done) {
+			break;
+		}
+	}
+	return arr;
+};
