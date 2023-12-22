@@ -127,3 +127,35 @@
         return false;
     }
 ```
+~~~js
+   // 代码块的另一种方式
+   const bird = 'ergou'; 
+~~~
+
+### 表格
+
+要添加表，请使用三个或多个连字符（---）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道
+
+ | name   | description | age |
+ | :----- | :------------:| ----: |
+ | 二狗  | 银文鸟       |  2
+ | 小三  | 驼色十姐妹   | 1
+ | 左对齐 | 中心对齐    | 右对齐 |
+ | <https://www.github.com> | `codeing` | [Github](https://www.github.com)
+
+### 标题编号
+
+[Heading IDs](https://markdown.com.cn/extended-syntax/heading-ids.html#heading-ids)
+
+### 删除线
+
+~~删除~~
+
+### 任务列表语法
+
+- [ ] first to do
+- [ ] secend to do 
+- [ ] thired to do
+
+
+这是个好东西，一步到位：[markdown.com.cn](https://markdown.com.cn/editor/)
